@@ -26,6 +26,7 @@ time, mark, audio, video {
 
 :root {
     --footerbuttoncolors: rgb(105, 107, 56);
+    --footerbuttonactive: rgb(80, 82, 43);
     --shadows: 0px 10px 30px -15px black;
 }
 
@@ -98,9 +99,30 @@ form > div {
     padding-bottom: 2.5vh;
 }
 
+input:invalid {
+    border-color: rgb(255, 0, 0, 0.5)
+}
+
 form div p > input {
+    height: 3vh;
     width: 20vh;
-    font-size: 2vh;
+    font-size: 1.6vh;
+    border-radius: 10px;
+    border-color:#E5E7EB;
+    border-width: 7px;
+    border-style: solid;
+    padding: 0 0 0 20px;
+    box-sizing: border-box;
+}
+
+form div p > input:focus {
+    border-color: rgb(21, 0, 255, 0.4);
+    outline: none;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.224);
+}
+
+form div p > input::placeholder {
+    opacity: 0.5;
 }
 
 
@@ -135,7 +157,12 @@ div > p {
 
 .footerpart > input:active {
     box-shadow: inset var(--shadows);
-    background-color: rgb(80, 82, 43);
+    background-color: var(--footerbuttonactive);
+    cursor: pointer;
+}
+
+.footerpart > input:hover {
+    cursor: pointer;
 }
 
 .footerpart p {
@@ -146,4 +173,8 @@ div > p {
 a {
     text-decoration: none;
     color: var(--footerbuttoncolors);
+}
+
+a:active {
+    color: var(--footerbuttonactive);
 }
