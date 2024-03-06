@@ -33,7 +33,6 @@ time, mark, audio, video {
 .allcontainer {
     display: flex;
     height: 100vh;
-    
 }
 
 .imageside {
@@ -44,11 +43,7 @@ time, mark, audio, video {
     height: 100%;
 }
 
-@media (max-width: 3000px){
-    .imageside {
-      display: none;
-    }
-  }
+
 
 .imageside img {
     height: 100%;
@@ -105,11 +100,7 @@ div > h1 {
     box-shadow: var(--shadows);
 }
 
-form {
-    font-size: large;
-}
-
-form > p {
+#formheader {
     padding: 2vh 0 2vh 0;
     font-size: 2.5vh;
 }
@@ -129,7 +120,7 @@ input:required {
     transition: border 500ms;
 }
 
-form div p > input {
+input {
     height: 3vh;
     width: 20vh;
     font-size: 3rem;
