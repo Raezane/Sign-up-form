@@ -22,43 +22,43 @@
             really not being sent anywhere yet!</h1>
           <h1>Go ahead and and try it out!</h1>
         </div>
-        <section class="formpart">
-          <form id="signing" action="" method="post">
+        <div class="formpart">
+          <form id="signing" action="$" method="post">
             <p>Let's do this!</p>
             <div class="name">
               <p>
                 <label for="firstname" >FIRST NAME</label>
-                <input type="text" id="firstname" >
+                <input type="text" id="firstname" name="first_name" required>
               </p>
               <p>
                 <label for="lastname" >LAST NAME</label>
-                <input type="text" id="lastname" >
+                <input type="text" id="lastname" name="last_name" required>
               </p>
             </div>
             <div class="mailphone">
               <p>
                 <label for="mail">EMAIL</label>
-                <input type="email" id="mail" placeholder="example@mail.com" >
+                <input type="email" id="mail" placeholder="example@mail.com" name="e_mail">
               </p>
               <p>
                 <label for="phone">PHONE NUMBER</label>
-                <input type="tel" id="phone" placeholder="0401234567" >
+                <input type="tel" id="phone" placeholder="0401234567" name="phonenum">
               </p>
             </div>
             <div class="pswrd">
               <p>
                 <label for="password">PASSWORD</label>
-                <input type="password" id="password" >
+                <input type="password" id="password" name="password" minlength="6" required>
               </p>
               <p>
                 <label for="confirm">CONFIRM PASSWORD</label>
-                <input type="password" id="confirm" >
+                <input type="password" id="confirm" name="confirm" required>
               </p>
             </div>
           </form>
-        </section>
+        </div>
         <div class="footerpart">
-          <button type="submit" form="signing">Create Account</button>
+          <button type="submit" form="signing" name="submit">Create Account</button>
           <p>Already have an account? <a href="">Log in</a></p>
         </div>
       </div>

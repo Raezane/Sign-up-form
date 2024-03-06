@@ -39,10 +39,16 @@ time, mark, audio, video {
 .imageside {
     flex: 1 1 0;
     position: relative;
-    width: 20%;
     overflow: hidden;
-    
+    min-width: 20%;
+    height: 100%;
 }
+
+@media (max-width: 3000px){
+    .imageside {
+      display: none;
+    }
+  }
 
 .imageside img {
     height: 100%;
@@ -73,7 +79,6 @@ time, mark, audio, video {
     flex: 2 1 0;
     display: flex;
     flex-direction: column;
-    
 }
 
 .headerpart,
@@ -87,7 +92,7 @@ time, mark, audio, video {
 }
 
 .headerpart {
-    padding-top: 9vh;
+    padding-top: 12vh;
 }
 
 div > h1 {
@@ -98,6 +103,10 @@ div > h1 {
 .formpart {
     background-color: white;
     box-shadow: var(--shadows);
+}
+
+form {
+    font-size: large;
 }
 
 form > p {
@@ -111,13 +120,19 @@ form > div {
 }
 
 input:invalid {
-    border-color: rgb(255, 0, 0, 0.5)
+    border-color: rgb(255, 0, 0, 0.5);
+    transition: border 500ms;
+}
+
+input:required {
+    border-color:#E5E7EB;
+    transition: border 500ms;
 }
 
 form div p > input {
     height: 3vh;
     width: 20vh;
-    font-size: 1.6vh;
+    font-size: 3rem;
     border-radius: 10px;
     border-color:#E5E7EB;
     border-width: 7px;
@@ -128,6 +143,7 @@ form div p > input {
 
 form div p > input:focus {
     border-color: rgb(21, 0, 255, 0.4);
+    transition: border 500ms;
     outline: none;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.224);
 }
@@ -166,6 +182,10 @@ div > p {
     box-shadow: var(--shadows);
 }
 
+.footerpart > button:hover {
+    background-color: var(--footerbuttonactive);
+}
+
 .footerpart > button:active {
     box-shadow: inset var(--shadows);
     background-color: var(--footerbuttonactive);
@@ -174,6 +194,7 @@ div > p {
 
 .footerpart > button:hover {
     cursor: pointer;
+    background-color: rgb(80, 82, 43);
 }
 
 .footerpart p {
