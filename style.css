@@ -27,7 +27,7 @@ time, mark, audio, video {
 :root {
     --footerbuttoncolors: rgb(105, 107, 56);
     --footerbuttonactive: rgb(80, 82, 43);
-    --shadows: 0px 10px 30px -15px black;
+    --shadows: 0px 3px 10px -4px black;
 }
 
 .allcontainer {
@@ -43,7 +43,11 @@ time, mark, audio, video {
     height: 100%;
 }
 
-
+@media (max-width: 600px){
+    .imageside {
+      display: none;
+    }
+  }
 
 .imageside img {
     height: 100%;
@@ -71,7 +75,7 @@ time, mark, audio, video {
 }
 
 .formside {
-    flex: 2 1 0;
+    flex: 3 1 0;
     display: flex;
     flex-direction: column;
 }
@@ -108,6 +112,7 @@ div > h1 {
 form > div {
     display: flex;
     padding-bottom: 2.5vh;
+    
 }
 
 input:invalid {
@@ -117,18 +122,17 @@ input:invalid {
 
 input:required {
     border-color:#E5E7EB;
-    transition: border 500ms;
 }
 
 input {
     height: 3vh;
-    width: 20vh;
-    font-size: 3rem;
-    border-radius: 10px;
+    width: clamp(120px, 250px, 15vw);
+    font-size: 0.8rem;
+    border-radius: 2px;
     border-color:#E5E7EB;
-    border-width: 7px;
+    border-width: 1.5px;
     border-style: solid;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 5px;
     box-sizing: border-box;
 }
 
@@ -136,16 +140,17 @@ form div p > input:focus {
     border-color: rgb(21, 0, 255, 0.4);
     transition: border 500ms;
     outline: none;
-    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.224);
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.224);
 }
 
 form div p > input::placeholder {
     opacity: 0.5;
+    font-size: 100%;
 }
 
 
 form div > p + p {
-    padding-left: 15vh;
+    padding-left: 6vw;
 }
 
 label {
@@ -155,6 +160,48 @@ label {
 div > p {
     display: flex;
     flex-direction: column;
+}
+
+#sub {
+    flex-direction: row-reverse;
+    padding: 0 0 0 6vw;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+}
+
+input#subscribe {
+    margin: 0;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    color: rgb(37, 11, 116);
+    border-color: rgb(26, 177, 31, 0.3);
+    box-shadow: none;
+    margin-bottom: 1px;
+}
+
+input#subscribe::before {
+    content: 'X';
+    font-size: 15px;
+    transform: translate(3px, 3px) scale(0);
+    transform-origin: center;
+    transition: all 0.2s ease-out;
+    background-color: rgb(37, 11, 116);
+
+}
+
+input#subscribe:checked::before {
+    transform: translate(-2px, 0px) scale(1.3, 0.8);
+    transition: all 0.2s cubic-bezier;
+    
+}
+
+#sub label {
+    position: absolute;
+    left: 115%;
+    top: 53%;
 }
 
 .footerpart {
@@ -169,7 +216,7 @@ div > p {
     background-color: rgb(105, 107, 56);
     color: white;
     border-style: none;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: var(--shadows);
 }
 
