@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
 </head>
 <body>
     <div class="allcontainer">
@@ -14,6 +15,7 @@
           <img src="./wind.png" alt="Wind lines">
           <p>FORM</p>
         </div>
+        <p>Photo by Usman Omar on Unsplash</p>
       </div>
       <div class="formside">
         <div class="headerpart">
@@ -42,7 +44,7 @@
               </p>
               <p>
                 <label for="phone">PHONE NUMBER</label>
-                <input type="tel" id="phone" placeholder="0401234567" name="phonenum">
+                <input type="tel" pattern="[0-9]{10}" id="phone" placeholder="0401234567" name="phonenum">
               </p>
             </div>
             <div class="pswrd">
@@ -62,7 +64,7 @@
           </form>
         </div>
         <div class="footerpart">
-          <button type="submit" form="signing" name="submit">Create Account</button>
+          <button type="submit" form="signing" name="submit" id="submitbutton">Create Account</button>
           <p>Already have an account? <a href="">Log in</a></p>
         </div>
       </div>
