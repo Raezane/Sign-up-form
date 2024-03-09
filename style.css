@@ -112,7 +112,7 @@ div > h1 {
 
 form > div {
     display: flex;
-    padding-bottom: 2.5vh;
+    padding-bottom: 4vh;
     
 }
 
@@ -120,6 +120,28 @@ input:invalid {
     border-color: rgb(255, 0, 0, 0.5);
     transition: border 500ms;
 }
+
+input:invalid:focus {
+    border-color: rgb(255, 0, 0, 0.5);
+}
+
+input[type="tel"]:invalid + span::after,
+input[type="email"]:invalid + span::after {
+    content: 'Incorrect format or not finished!';
+    font-size: 1.3vh;
+    color: red;
+    position: absolute;
+    margin-top: 2px;
+}
+
+#confirm:invalid + span::after {
+    content: 'Passwords not matching!';
+    font-size: 1.3vh;
+    color: red;
+    position: absolute;
+    margin-top: 2px;
+}
+
 
 input:required {
     border-color:#E5E7EB;
